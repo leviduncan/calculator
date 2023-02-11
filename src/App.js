@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './App.css';
+import { evaluate } from 'mathjs'
 import Keypad from './components/Keypad';
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     setInput(input + value)
   }
   const handleEqual = () => {
-    setInput(eval(input).toString())
+    setInput(evaluate(input).toString())
   }
   const handleClear = () => {
     setInput("")
